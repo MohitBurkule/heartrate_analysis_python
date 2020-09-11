@@ -20,7 +20,7 @@ __all__ = ['get_data',
 
 
 def get_data(filename, delim=',', column_name='None', encoding=None, 
-             ignore_extension=False,is_actual_data:False):
+             ignore_extension=False,is_actual_data=False):
     '''load data from file
 
     Function to load data from a .CSV or .MAT file into numpy array.

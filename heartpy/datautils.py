@@ -20,7 +20,7 @@ __all__ = ['get_data',
 
 
 def get_data(filename, delim=',', column_name='None', encoding=None, 
-             ignore_extension=False):
+             ignore_extension=False,is_actual_data:False):
     '''load data from file
 
     Function to load data from a .CSV or .MAT file into numpy array.
@@ -99,6 +99,9 @@ def get_data(filename, delim=',', column_name='None', encoding=None,
     >>> filepath = resource_filename(__name__, 'data/data2.log')
     >>> data = get_data(filepath, column_name = 'hr', ignore_extension = True)
     '''
+    if(is_actual_data):
+                      hrdata = np.genfromtxt(filename, delimiter=delim, names=True, dtype=None, encoding=None)
+                      return hrdata
     file_ext = filename.split('.')[-1]
     if file_ext == 'csv' or file_ext == 'txt':
         if column_name != 'None':

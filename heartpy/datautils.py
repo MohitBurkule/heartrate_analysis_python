@@ -100,7 +100,7 @@ def get_data(filename, delim=',', column_name='None', encoding=None,
     >>> data = get_data(filepath, column_name = 'hr', ignore_extension = True)
     '''
     if(is_actual_data):
-                      hrdata = np.genfromtxt(filename, delimiter=delim, names=True, dtype=str, encoding=None)
+                      hrdata = np.genfromtxt(filename, delimiter=delim, names=True, dtype=str, encoding=encoding)
                       return hrdata
     file_ext = filename.split('.')[-1]
     if file_ext == 'csv' or file_ext == 'txt':
